@@ -1,7 +1,7 @@
 sap.ui.define(['jquery.sap.global', 'sap/ui/model/json/JSONModel', 'sap/ui/core/mvc/Controller'], function(jQuery, JSONModel, Controller) {
   "use strict";
 
-  return Controller.extend("refillchassis.controller.App", {
+  return Controller.extend("managepalletschemas.controller.App", {
     onInit: function() {
 
       if (!String.prototype.startsWith) {

@@ -1,4 +1,4 @@
-<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="refillchassis.controller.App" displayBlock="true">
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="managepalletschemas.controller.App" displayBlock="true">
     <App id="rootControl" class="myPage">
         <pages></pages>
     </App>

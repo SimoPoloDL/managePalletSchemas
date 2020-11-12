@@ -1,13 +1,13 @@
 {
     "_version": "1.0.0",
     "sap.app": {
-        "id": "refillchassis",
+        "id": "managepalletschemas",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
             "version": "1.0.0"
         },
-        "title": "refillchassis",
+        "title": "managepalletschemas",
         "description": "Refill Telai"
     },
 
@@ -34,11 +34,11 @@
     },
 
     "sap.ui5": {
-        "rootView": "refillchassis.view.App",
+        "rootView": "managepalletschemas.view.App",
         "routing": {
             "config": {
                 "routerClass": "sap.m.routing.Router",
-                "viewPath": "refillchassis.view",
+                "viewPath": "managepalletschemas.view",
                 "controlId": "rootControl",
                 "controlAggregation": "pages",
                 "viewType": "XML"
@@ -53,7 +53,7 @@
             "targets": {
                 "MainV": {
                     "viewName": "Main",
-                    "viewPath": "refillchassis.view",
+                    "viewPath": "managepalletschemas.view",
                     "viewLevel": 1
                 }
             }
@@ -72,7 +72,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "refillchassis.i18n.i18n"
+                    "bundleName": "managepalletschemas.i18n.i18n"
                 }
             }
         },

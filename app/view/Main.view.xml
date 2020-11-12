@@ -7,11 +7,11 @@
    xmlns:html="http://www.w3.org/1999/xhtml"
    xmlns:t="sap.ui.table"
    xmlns:f="sap.ui.layout.form"
-   xmlns:comp="refillchassis.component"
+   xmlns:comp="managepalletschemas.component"
    xmlns:u="sap.ui.unified"
-   controllerName="refillchassis.controller.Main">
-   <Page title="{i18n>refillchassis.view.title}" class="myPage" showHeader="true" enableScrolling="false">
-      <!-- <headerContent> <Label text="{i18n>refillchassis.view.user.label}" class="sapUiTinyMarginEnd"/> <Label text="{info>/user/name}" class="sapUiMediumMarginEnd whiteText"/> <Button press="logOff" icon="sap-icon://log"/> <Image id="DLLogo"
+   controllerName="managepalletschemas.controller.Main">
+   <Page title="{i18n>managepalletschemas.view.title}" class="myPage" showHeader="true" enableScrolling="false">
+      <!-- <headerContent> <Label text="{i18n>managepalletschemas.view.user.label}" class="sapUiTinyMarginEnd"/> <Label text="{info>/user/name}" class="sapUiMediumMarginEnd whiteText"/> <Button press="logOff" icon="sap-icon://log"/> <Image id="DLLogo"
       class="DLLogo" src="images/Delonghi.png" densityAware="false" height="75%"/> </headerContent> -->
       <customHeader>
          <Bar>
@@ -19,12 +19,10 @@
                <Button icon="sap-icon://nav-back" press="toBackPage"/>
             </contentLeft>
             <contentMiddle>
-               <Label text="{i18n>refillchassis.view.title}" class="sapMTitle sapMTitleStyleAuto sapMTitleNoWrap sapUiTinyMarginEnd"/>
+               <Label text="{i18n>managepalletschemas.view.title}" class="sapMTitle sapMTitleStyleAuto sapMTitleNoWrap sapUiTinyMarginEnd"/>
             </contentMiddle>
             <contentRight>
-               <Label text="{i18n>refillchassis.view.data.refresh}" class="sapUiTinyMarginEnd"/>
-               <Button icon="sap-icon://refresh" press="getData" class="sapUiMediumMarginEnd"/>
-               <Label text="{i18n>refillchassis.view.user.label}" class="sapUiTinyMarginEnd"/>
+               <Label text="{i18n>managepalletschemas.view.user.label}" class="sapUiTinyMarginEnd"/>
                <Label text="{info>/user/name}" class="sapUiMediumMarginEnd"/>
                <Button press="logOff" icon="sap-icon://log"/>
                <Image id="DLLogo" class="DLLogo" src="images/Delonghi.png" densityAware="false" height="75%"/>
@@ -32,79 +30,7 @@
          </Bar>
       </customHeader>
       <content>
-         <u:SplitContainer id="mySplitContainer" showSecondaryContent="true" secondaryContentSize="15%">
-            <u:secondaryContent>
-               <VBox class="vboxContentLine" height="92%">
-                  <Label text="{i18n>refillchassis.view.line.lineSelected}" class="sapUiTinyMarginEnd labelLineSelected"/>
-                  <CheckBox id="checkBoxAllLine" text="{i18n>refillchassis.view.line.selectNotSelect}" selected="true" select="onParentClicked"/>
-                  <!-- partiallySelected="{= !(${/child1} &amp;&amp; ${/child2} &amp;&amp; ${/child3})}" selected="{= ${/child1} || ${/child2} || ${/child3} }"-->
-                  <core:HTML content="&lt;hr&gt;"/>
-                  <VBox items="{modelLines>/}">
-                     <CheckBox text="{modelLines>LINENAME}" selected="{modelLines>SELECTED}" select="onSelectedLine"/>
-                  </VBox>
-               </VBox>
-               <Button icon="sap-icon://action-settings" text="{i18n>refillchassis.view.line.settings}" class="buttonSettingsLine" press="onPressButtonSettings"/>
-            </u:secondaryContent>
-            <u:content>
-               <Table id="tableRefill" inset="false" items="{	path: 'modelRefill>/', sorter: {
-        path: 'modelRefill>LINENAME',
-        descending: false,
-        group: true
-      }, groupHeaderFactory: '.getGroupHeader'}">
-                  <columns>
-                     <Column width="3%" hAlign="Center" vAlign="Middle">
-                        <Label text="{i18n>refillchassis.view.tableRefill.work_center}" wrapping="true"/>
-                     </Column>
-                     <Column width="10%" hAlign="Center" vAlign="Middle">
-                        <Label text="{i18n>refillchassis.view.tableRefill.chassis}" wrapping="true"/>
-                     </Column>
-                     <!-- <Column width="5%" hAlign="Center" vAlign="Middle"> <Label text="{i18n>refillchassis.view.tableRefill.description}" wrapping="true"/> </Column> -->
-                     <Column width="3%" hAlign="Center" vAlign="Middle">
-                        <Label text="{i18n>refillchassis.view.tableRefill.pzpa}" wrapping="true"/>
-                     </Column>
-                     <Column width="3%" hAlign="Center" vAlign="Middle">
-                        <Label text="{i18n>refillchassis.view.tableRefill.qtyAvailable}" wrapping="true"/>
-                     </Column>
-                     <Column width="3%" hAlign="Center" vAlign="Middle">
-                        <Label text="{i18n>refillchassis.view.tableRefill.palletInLine}" wrapping="true"/>
-                     </Column>
-                     <Column width="3%" hAlign="Center" vAlign="Middle">
-                        <Label text="{i18n>refillchassis.view.tableRefill.freeSlots}" wrapping="true"/>
-                     </Column>
-                     <Column width="3%" hAlign="Center" vAlign="Middle">
-                        <Label text="{i18n>refillchassis.view.tableRefill.qtyToRefill}" wrapping="true"/>
-                     </Column>
-                     <Column width="3%" hAlign="Center" vAlign="Middle">
-                        <Label text="{i18n>refillchassis.view.tableRefill.palletToRefill}" wrapping="true"/>
-                     </Column>
-                     <Column width="10%" hAlign="Center" vAlign="Middle">
-                        <Label text="{i18n>refillchassis.view.tableRefill.action}" wrapping="true"/>
-                     </Column>
-                  </columns>
-                  <items>
-                     <ColumnListItem>
-                        <customData> <core:CustomData key="background" value="{modelRefill>TO_REFILL}" writeToDom="true" /> </customData>
-                        <cells>
-                           <!-- <Text text="{modelOrders>STATO}" class="fontWeightBold"/> -->
-                           <Text text="{modelRefill>WORK_CENTER}"/>
-                           <!-- <Text text="{modelRefill>ITEM}"/> <Text text="{modelRefill>DESCRIPTION}"/> -->
-                           <ObjectIdentifier title="{modelRefill>ITEM}" text="{modelRefill>DESCRIPTION}"/>
-                           <Text text="{modelRefill>PZPA}"/>
-                           <Text text="{modelRefill>QTY_AVAILABLE}"/>
-                           <Text text="{modelRefill>PALLET_IN_LINEA}"/>
-                           <Text text="{modelRefill>SLOT_LIBERI} / {modelRefill>MAX_PALLET}"/>
-                           <Text text="{modelRefill>QTY_TO_REFILL}"/>
-                           <Text text="{modelRefill>PALLET_TO_REFILL}"/>
-                           <HBox justifyContent="SpaceAround">
-                              <Button width="10rem" press="onPressRefill" type="Reject" text="{i18n>refillchassis.view.tableRefill.refill}" icon="sap-icon://action"/>
-                              <Button width="10rem" press="onPressReturn" type="Accept" text="{i18n>refillchassis.view.tableRefill.return}" icon="sap-icon://media-rewind"/>
-                           </HBox>
-                        </cells>
-                     </ColumnListItem>
-                  </items>
-               </Table>
-            </u:content>
-         </u:SplitContainer>
+
       </content>
    </Page>
 </mvc:View>
