@@ -1,0 +1,7 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<BusyDialog
+		title="{i18n>refillchassis.view.busyDialog.title}"
+		text="{i18n>refillchassis.view.busyDialog.text}"/>
+</core:FragmentDefinition>

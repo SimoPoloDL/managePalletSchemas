@@ -1,0 +1,169 @@
+/*.myPage *
+{
+    -o-user-select:none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+} */
+
+.myPage .tmpBorder
+{
+    border-width: 1px;
+
+}
+
+.myPage .toolBar
+{
+    border-bottom-width: thin;
+    border-bottom-style: inset;
+    border-bottom-color: lightgray;
+
+    border-top-width: thin;
+    border-top-style: inset;
+    border-top-color: lightgray;
+}
+
+.myPage .DLLogo
+{
+    display: inline-block;
+    margin-right: 38px;
+    margin-left: 38px;
+    padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+    overflow: hidden;
+    position: relative;
+    border: none;
+}
+
+.labelInfo
+{
+    font-size: 1.1rem;
+}
+
+.myPage .sapMLabel .whiteText
+{
+    color: white;
+}
+
+.myPage .sapMLabel .blackText
+{
+    color: black;
+}
+
+.textInfo
+{
+    font-size: 1.4rem;
+}
+
+.myPage .sapMText .blackText
+{
+    color: black;
+}
+
+.myPage .sapMListTbl .sapMText
+{
+    color: black;
+}
+
+.myPage .sapMTitleStyleAuto {
+    font-size: 1.5rem;
+}
+
+.myDialog .sapMLabel
+{
+    font-size: 1.6rem;
+}
+
+.myDialog .sapMLabel.whiteText
+{
+    color: white;
+}
+
+.myDialog .sapMLabel.blackText
+{
+    color: black;
+}
+
+.myDialog .sapMText {
+    font-size: 2.0rem;
+    color: black;
+}
+
+.myDialog .sapMFooter-CTX .sapMBtn .sapMBtnContent
+{
+    font-size: 2.0rem;
+}
+
+.myMessageDialog
+{
+    font-size: 1.7rem
+}
+
+@media screen and (max-width: 1450px) {
+    .myPage .podHeader .sapMLabel {
+        font-size: 1.2rem;
+    }
+    .myPage .podHeader .sapMLabel .whiteText {
+        color: white;
+    }
+    .myPage .sapUiMediumMarginEnd {
+        margin-right: 1rem !important;
+    }
+}
+
+
+.myPage .titleMargin
+{
+    margin-left: 7rem !important;
+}
+
+.sapMLabel.blackText{
+    color: black;
+    font-size: 0.8rem;
+}
+
+.sapMText.blackText{
+    color: black;
+    font-size: 0.8rem;
+}
+
+.sapMLIB{
+    height:2rem;
+}
+/*
+tr[data-background="Y"] {
+    background-color: rgba(0, 120, 51, 0.25) !important;
+}*/
+
+tr[data-background="N"] {
+    background-color: rgba(204, 25, 25, 0.25) !important;
+}
+
+.sapMLabelVertical {
+	writing-mode: vertical-rl !important;
+}
+
+.fontWeightBold {
+	font-weight: bold !important;
+}
+
+.vboxContentLine {
+  padding: 1rem 0.75rem;
+    box-sizing: border-box;
+}
+
+.labelLineSelected {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #333333;
+    font-family: "72","72full",Arial,Helvetica,sans-serif;
+    line-height: 1.15;
+}
+
+.buttonSettingsLine {
+  margin-left: 50%;
+}
+
+.buttonRound > .sapMBtnInner {
+  border-radius: 100%;
+}

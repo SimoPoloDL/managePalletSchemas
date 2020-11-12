@@ -1,0 +1,91 @@
+{
+    "_version": "1.0.0",
+    "sap.app": {
+        "id": "refillchassis",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "refillchassis",
+        "description": "Refill Telai"
+    },
+
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_belize",
+            "sap_bluecrystal"
+        ]
+    },
+
+    "sap.ui5": {
+        "rootView": "refillchassis.view.App",
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewPath": "refillchassis.view",
+                "controlId": "rootControl",
+                "controlAggregation": "pages",
+                "viewType": "XML"
+            },
+            "routes": [
+                {
+                    "name": "MainR",
+                    "pattern": "",
+                    "target": "MainV"
+                }
+            ],
+            "targets": {
+                "MainV": {
+                    "viewName": "Main",
+                    "viewPath": "refillchassis.view",
+                    "viewLevel": 1
+                }
+            }
+        },
+        "dependencies": {
+            "minUI5Version": "1.30.0",
+            "libs": {
+                "sap.ui.core": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "refillchassis.i18n.i18n"
+                }
+            }
+        },
+        "resources": {
+            "css": [{
+                    "uri": "css/style.css"
+                }, {
+                    "uri": "css/materialize.css",
+                    "id": "materialize"
+                }, {
+                    "uri": "css/normalize.css",
+                    "id": "normalize"
+                }]
+        }
+    }
+}

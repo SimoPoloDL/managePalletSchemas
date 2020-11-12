@@ -1,0 +1,9 @@
+<Row>
+    {"Rows":[
+    {"WORKCENTER": "EC01", "DESCRIPTION": "Linea 4.0 EC01", "SELECTED": true},
+    {"WORKCENTER": "EC02", "DESCRIPTION": "Linea 4.0 EC01", "SELECTED": true},
+    {"WORKCENTER": "EC03", "DESCRIPTION": "Linea 4.0 EC01", "SELECTED": true},
+    {"WORKCENTER": "EC04", "DESCRIPTION": "Linea 4.0 EC01", "SELECTED": true},
+    {"WORKCENTER": "EC05", "DESCRIPTION": "Linea 4.0 EC01", "SELECTED": true}
+    ]}
+</Row>
